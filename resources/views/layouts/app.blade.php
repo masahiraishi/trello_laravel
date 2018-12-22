@@ -8,9 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>trello</title>
 
     <!-- Styles -->
+    {{-- ローカルの場合、secure_asset=>assetにする--}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
