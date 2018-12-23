@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
-use App\Cards;
+use App\Card;
 use App\listing;
 use Validator;
 

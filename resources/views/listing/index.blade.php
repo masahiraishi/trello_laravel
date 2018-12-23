@@ -16,7 +16,7 @@
                     {{--カード表示追加--}}
                     <div class="cardWrapper">
                         @foreach ($listing->cards as $card)
-                            <a class="cardDetail_link" href="lisiting/{listing_id}/card/{card_id}">
+                            <a class="cardDetail_link" href="listing/{{$listing->id}}/card/{{$card->id}}">
                                 <div class="card">
                                     <h3 class="card_title">{{$card->title}}</h3>
                                     <div class="card_detail is-exist"><i class="fas fa-bars"></i></div>
@@ -24,8 +24,9 @@
                             </a>
                         @endforeach
                         <div class="add_Card">
+                            <a class="addCard_link" href="/listing/{{$listing->id}}/card/new">
                             <i class="far fa-plus-square"></i>
-                            <a class="addCard_link" href="/listing/{{$listing->id}}/card/new">さらにカードを追加</a>
+                            さらにカードを追加</a>
                         </div>
                     </div>
 
