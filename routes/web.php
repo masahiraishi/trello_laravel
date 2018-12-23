@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','ListingController@index');
+Route::get('/new','ListingController@new')->name('new');
+Route::post('/listings','ListingController@store');
+Route::get('/listingsedit/{listing_id}', 'ListingController@edit');
+Route::post('/listing/edit','ListingController@update');
+Route::get('/listingsdselete/{listing_id}', 'ListingController@destroy');
 
 Auth::routes();
 
