@@ -8,6 +8,7 @@ class Listing extends Model
 {
     public function cards()
     {
-        return $this->hasmany('App/card');
+//
+        return $this->hasMany('App/Card');
     }
 }

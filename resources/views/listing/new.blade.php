@@ -2,7 +2,7 @@
 @section('content')
     <div class="panel-body">
         {{--バリデーションエラーの場合に表示--}}
-        {{--@include('common.errors')--}}
+        @include('common.errors')
         {{--リスト作成フォーム--}}
         <form action="{{url('listings')}}" method="POST" class="form-horizontal">
             {{csrf_field()}}

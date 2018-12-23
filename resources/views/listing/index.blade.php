@@ -12,6 +12,23 @@
                             <a href="{{ url('/listingsedit', $listing->id) }}"><i class="fas fa-pen"></i></a>
                         </div>
                     </div>
+
+                    {{--カード表示追加--}}
+                    <div class="cardWrapper">
+                        @foreach ($listing->cards as $card)
+                            <a class="cardDetail_link" href="lisiting/{listing_id}/card/{card_id}">
+                                <div class="card">
+                                    <h3 class="card_title">{{$card->title}}</h3>
+                                    <div class="card_detail is-exist"><i class="fas fa-bars"></i></div>
+                                </div>
+                            </a>
+                        @endforeach
+                        <div class="add_Card">
+                            <i class="far fa-plus-square"></i>
+                            <a class="addCard_link" href="/listing/{{$listing->id}}/card/new">さらにカードを追加</a>
+                        </div>
+                    </div>
+
                 </div>
             @endforeach
         </div>
