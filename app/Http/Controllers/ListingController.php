@@ -72,9 +72,8 @@ class ListingController extends Controller
     public function destroy($listing_id)
     {
 //        削除するリストのIDを検索
-        $listing = Lising::find($listing_id);
-        var_dump($listing);
-        exit;
+        $listing = Listing::find($listing_id);
+
 //        削除
         $listing->delete();
         return redirect('/');
