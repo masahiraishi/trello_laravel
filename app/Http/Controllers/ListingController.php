@@ -9,9 +9,9 @@ use Validator;
 
 class ListingController extends Controller
 {
-    public function __contsruct()
+    public function __construct()
     {
-//        ログインしていなければログインさせる
+//        ミドルウェアでログインしていなければログインさせる
         $this->middleware('auth');
     }
 
@@ -31,15 +31,26 @@ class ListingController extends Controller
 
     public function store(Request $request)
     {
-//        バリデーション
+//        バリデーション（名前）
         $validator = Validator::make($request->all(),['list_name'=>'required|max255',]);
-
 //        バリデーションエラー
         if ($validator->fails())
         {
-            return redirect()->back()->withErrors($validator->errors()->withInput());
+            return redirect()->back()->withErrors($validator->errors())->withInput();
         }
-//        TODO　ヘルパ関数調べる
+//        TODO　
+        $listing = Listing::find($request->id);
+        $listing->title = $request->list_name;
+        $listing->save();
+        return redirect('/');
+    }
 
+    public function destroy($listing_id)
+    {
+//        削除するリストのIDを検索
+        $listing = Lising::find('listing_id');
+//        削除
+        $listing->delete();
+        return redirect('/');
     }
 }
