@@ -42,7 +42,7 @@
             <ul class="header_menu">
                 <li class="nav-link">{{Auth::user()->name }}さん</li>
                 <li class="header_menu_title">
-                    <a class="nav-link listNew" href="/">kanban</a>
+                    <a class="nav-link listNew" href="/">trello</a>
                 </li>
                 <li>
                     <ul class="header_menu_inner">
