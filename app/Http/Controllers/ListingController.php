@@ -36,7 +36,8 @@ class ListingController extends Controller
 //        バリデーションエラー
         if ($validator->fails())
         {
-            return redirect()->back()->withErrors($validator->errors())->withInput();
+            return redirect()->back()
+                ->withErrors($validator->errors())->withInput();
         }
 //        TODO　
         $listing = new Listing;
